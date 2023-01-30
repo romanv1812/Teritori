@@ -1,15 +1,15 @@
 [<img src='https://user-images.githubusercontent.com/83868103/215572894-9ec38124-2d2b-4e48-9a29-5ca68fbc2614.png' alt='discord'  width='33.3%'>](https://github.com/romanv1812/Teritori/blob/main/data/mainnet_guide.md)[<img src='https://user-images.githubusercontent.com/83868103/215572987-55c89326-4201-41df-a21a-dde97ebd1280.png' alt='discord'  width='33.3%'>](https://restake.app/teritori/torivaloper1qy38xmcrnht0kt5c5fryvl8llrpdwer6atxj5u/stake)[<img src='https://user-images.githubusercontent.com/83868103/215573016-93348857-c5f8-4480-a22e-3d6c9ab94444.png' alt='discord'  width='33.39%'>](https://github.com/romanv1812/Teritori/blob/main/data/services.md)
-### Links:   
-[Explorer](https://okp4.explorers.guru) | [Explorer](https://test.anode.team/opk4) 
+```### Links:   
+[Explorer](https://www.mintscan.io/teritori) | |
 
-[Faucet](https://faucet.okp4.network/)  
+[Faucet](https://faucet.okp4.network/)
 
-[Discord](https://discord.com/invite/okp4) | [Twitter](https://twitter.com/OKP4_Protocol) | [Telegram](https://t.me/okp4network)
+[Discord](https://discord.gg/teritori) | [Twitter](https://twitter.com/TeritoriNetwork) | [Telegram](https://t.me/okp4network)
 
 [Github](https://github.com/okp4)  | [Website](https://okp4.network/)  | [Medium](https://blog.okp4.network/) | [Linkedin](https://www.linkedin.com/company/okp4-open-knowledge-platform-for) | [Whitepaper](https://docs.okp4.network/whitepaper/abstract%20)
+```
 
-
-
+```
 ## Guide navigation:
 * [Prepare](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#prepare)
 * [All variables](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#all-variables)
@@ -22,6 +22,7 @@
 * [Update node](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#update-node)
 * [Useful commands](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#useful-commands)
 * [Delete node](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#delete-node)
+```
 ## Prepare
 ### Update if needed and install packages
 ```bash
@@ -29,10 +30,10 @@ sudo apt update && sudo apt upgrade -y && \
 sudo apt install curl tar wget clang pkg-config libssl-dev libleveldb-dev jq build-essential bsdmainutils git make ncdu htop screen unzip bc fail2ban htop -y
 ```
 
-### Installing GO v1.19.3
+### Installing GO v1.19.4
 ```bash
 cd $HOME && \
-ver="1.19.3" && \
+ver="1.19.4" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -65,37 +66,37 @@ source $HOME/.bash_profile
 ## Build and configuration
 ```bash 
 # Build binary 
-git clone https://github.com/okp4/okp4d.git okp4d && \
-cd okp4d && \
+git clone https://github.com/TERITORI/teritori-chain.git teritorid && \
+cd teritorid && \
 make install
 ```
 ```bash 
 # Initialisation
-okp4d init $MONIKER --chain-id okp4-nemeton-1 && \
-okp4d config chain-id okp4-nemeton-1 && \
-okp4d config keyring-backend test 
+teritorid init $MONIKER --chain-id okp4-nemeton-1 && \
+teritorid config chain-id okp4-nemeton-1 && \
+teritorid config keyring-backend test 
 ```
 ```bash
 # Add wallet
-okp4d keys add $WALLET
+teritorid keys add $WALLET
 # or 
-okp4d keys add $WALLET --recover
+teritorid keys add $WALLET --recover
 ```
 ```bash
 # Set variables 
-VALOPER=$(okp4d keys show $WALLET --bech val -a) && \
-ADDRESS=$(okp4d keys show $WALLET --address) && \
+VALOPER=$(teritorid keys show $WALLET --bech val -a) && \
+ADDRESS=$(teritorid keys show $WALLET --address) && \
 echo "export VALOPER=$VALOPER" >> $HOME/.bash_profile && \
 echo "export ADDRESS=$ADDRESS" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile
 ```
 ```bash 
 # Peers and seeds
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"9c462b1c0ba63115bd70c3bd4f2935fcb93721d0@65.21.170.3:42656,ee4c5d9a8ac7401f996ef9c4d79b8abda9505400@144.76.97.251:12656,2e85c1d08cfca6982c74ef2b67251aa459dd9b2f@65.109.85.170:43656,264256d32511c512a0a9d4098310a057c9999fd1@okp4.sergo.dev:12233,4ea26ce893d8f4f89a7b49b9bd77e0fbd914e029@65.109.88.162:36656,8d8fdad759361a57121903632adbd66ad072b1ab@okp4-testnet.nodejumper.io:29656,e3c602b146121c88d350bd7e0f6ce8977e1aacff@161.97.122.216:26656,3c805c2dead7b7a3a1d3ba2399d4d62153322413@65.108.2.41:36656,9d1482bc31fb4578a5c7f7f65c4e0aaf2dfc2336@213.239.215.77:34656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@[2a02:c206:2093:4875::1]:36656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@38.242.150.63:36656,99f6675049e22a0216af0e2447e7a4c5021874cd@142.132.132.200:28656,9392c27a9a561c31e7a920dc6f577d663c473ef8@154.12.225.88:26656\"/; s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.okp4d/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"9c462b1c0ba63115bd70c3bd4f2935fcb93721d0@65.21.170.3:42656,ee4c5d9a8ac7401f996ef9c4d79b8abda9505400@144.76.97.251:12656,2e85c1d08cfca6982c74ef2b67251aa459dd9b2f@65.109.85.170:43656,264256d32511c512a0a9d4098310a057c9999fd1@okp4.sergo.dev:12233,4ea26ce893d8f4f89a7b49b9bd77e0fbd914e029@65.109.88.162:36656,8d8fdad759361a57121903632adbd66ad072b1ab@okp4-testnet.nodejumper.io:29656,e3c602b146121c88d350bd7e0f6ce8977e1aacff@161.97.122.216:26656,3c805c2dead7b7a3a1d3ba2399d4d62153322413@65.108.2.41:36656,9d1482bc31fb4578a5c7f7f65c4e0aaf2dfc2336@213.239.215.77:34656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@[2a02:c206:2093:4875::1]:36656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@38.242.150.63:36656,99f6675049e22a0216af0e2447e7a4c5021874cd@142.132.132.200:28656,9392c27a9a561c31e7a920dc6f577d663c473ef8@154.12.225.88:26656\"/; s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.teritorid/config/config.toml
 ```
 ```bash 
 # Download ZIP genesis 
-wget -O $HOME/.okp4d/config/genesis.json https://raw.githubusercontent.com/okp4/networks/main/chains/nemeton-1/genesis.json
+wget -O $HOME/.teritorid/config/genesis.json https://raw.githubusercontent.com/okp4/networks/main/chains/nemeton-1/genesis.json
 ```
 ## Change PORT
 ```bash
@@ -108,19 +109,19 @@ s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://0.0.0.0:$((NODES_NUM+26))65
 s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:$((NODES_NUM+6))060\"%; \
 s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:$((NODES_NUM+26))656\"%; \
 s%^external_address = \"\"%external_address = \"`echo $(wget -qO- eth0.me):$((NODES_NUM+26))656`\"%; \
-s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":$((NODES_NUM+26))660\"%" $HOME/.okp4d/config/config.toml
+s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":$((NODES_NUM+26))660\"%" $HOME/.teritorid/config/config.toml
 ```
 ```bash
 sed -i.bak -e "\
 s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:$((NODES_NUM+1))317\"%; \
 s%^address = \":8080\"%address = \":$((NODES_NUM+8))080\"%; \
 s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:$((NODES_NUM+9))090\"%; \
-s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:$((NODES_NUM+9))091\"%" $HOME/.okp4d/config/app.toml
+s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:$((NODES_NUM+9))091\"%" $HOME/.teritorid/config/app.toml
 ```
 ```bash
 echo "export NODE=http://localhost:$((NODES_NUM+26))657" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
-okp4d config node $NODE
+teritorid config node $NODE
 ```
 ## Memory optimization
 ```bash 
@@ -134,29 +135,29 @@ pruning_keep_every="0" && \
 pruning_interval="10" && \
 min_retain_blocks="1" && \
 inter_block_cache="false" && \
-sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.okp4d/config/config.toml && \
-sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.okp4d/config/app.toml && \
-sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/.okp4d/config/app.toml && \
-sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.okp4d/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.okp4d/config/app.toml && \
-sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.okp4d/config/app.toml && \
-sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.okp4d/config/app.toml && \
-sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.okp4d/config/app.toml && \
-sed -i.bak -e "s/^inter-block-cache *=.*/inter-block-cache = \"$inter_block_cache\"/" $HOME/.okp4d/config/app.toml
+sed -i.bak -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.teritorid/config/config.toml && \
+sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.teritorid/config/app.toml && \
+sed -i.bak -e "s/^snapshot-interval *=.*/snapshot-interval = \"$snapshot_interval\"/" $HOME/.teritorid/config/app.toml && \
+sed -i.bak -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.teritorid/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.teritorid/config/app.toml && \
+sed -i.bak -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.teritorid/config/app.toml && \
+sed -i.bak -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.teritorid/config/app.toml && \
+sed -i.bak -e "s/^min-retain-blocks *=.*/min-retain-blocks = \"$min_retain_blocks\"/" $HOME/.teritorid/config/app.toml && \
+sed -i.bak -e "s/^inter-block-cache *=.*/inter-block-cache = \"$inter_block_cache\"/" $HOME/.teritorid/config/app.toml
 ```
 
 ## Start node
 ```bash 
 # Create service 
-sudo tee /etc/systemd/system/okp4d.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/teritorid.service > /dev/null <<EOF
 [Unit]
-Description=okp4d Node
+Description=teritorid Node
 After=network.target
 
 [Service]
 User=$USER
 Type=simple
-ExecStart=$(which okp4d) start
+ExecStart=$(which teritorid) start
 Restart=on-failure
 LimitNOFILE=65535
 
@@ -167,9 +168,9 @@ EOF
 ```bash
 # Start service 
 sudo systemctl daemon-reload && \
-sudo systemctl enable okp4d && \
-sudo systemctl restart okp4d && \
-sudo journalctl -u okp4d -f -o cat
+sudo systemctl enable teritorid && \
+sudo systemctl restart teritorid && \
+sudo journalctl -u teritorid -f -o cat
 ```
 ```bash
 # Check synchronization of your node, if the result is false, the node is synchronized
@@ -177,9 +178,9 @@ curl -s $NODE/status | jq .result.sync_info.catching_up
 ```
 ## Create a validator
 ```bash 
-okp4d tx staking create-validator \
+teritorid tx staking create-validator \
   --amount=1000000uknow \
-  --pubkey=$(okp4d tendermint show-validator) \
+  --pubkey=$(teritorid tendermint show-validator) \
   --moniker=$MONIKER \
   --chain-id=okp4-nemeton-1 \
   --commission-rate="0.10" \
@@ -199,8 +200,8 @@ If you did not find an open RPC, you can use the [parser](https://github.com/rom
 <img width="1078" alt="image" src="https://user-images.githubusercontent.com/83868103/210120043-e662ea3d-5c2e-4d06-9f62-162c6005ec70.png">
 
 ```bash
-sudo systemctl stop okp4d && \
-okp4d tendermint unsafe-reset-all --home $HOME/.okp4d --keep-addr-book
+sudo systemctl stop teritorid && \
+teritorid tendermint unsafe-reset-all --home $HOME/.teritorid --keep-addr-book
 ```
 ```bash
 # RPC example: 5.161.106.127:26657
@@ -220,42 +221,42 @@ echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 ```bash
 # Peer example: 22cd56c20132817d609025f42c5e263e70157e64@5.161.106.127:26656
 peers=""
-sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.okp4d/config/config.toml
+sed -i.bak -e  "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.teritorid/config/config.toml
 ```
 ```bash
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.okp4d/config/config.toml
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.teritorid/config/config.toml
 ```
 ```bash
-sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
+sudo systemctl restart teritorid && sudo journalctl -u teritorid -f -o cat
 ```
 ## Update node
 ```bash
 TAG_NAME=""
 ```
 ```bash
-sudo systemctl stop okp4d && \
-cd okp4d && \
+sudo systemctl stop teritorid && \
+cd teritorid && \
 git pull; \
 git checkout tags/$TAG_NAME && \
 make clean; \
 make install && \
-sudo systemctl restart okp4d && \
-journalctl -u okp4d -f -o cat
+sudo systemctl restart teritorid && \
+journalctl -u teritorid -f -o cat
 ```
 ## Useful commands
 
 ### Node status
 ```bash
 # Service logs
-journalctl -u okp4d -f -o cat
+journalctl -u teritorid -f -o cat
 ```
 ```bash
 # Service status
-systemctl status okp4d
+systemctl status teritorid
 ```
 ```bash
 # Check node status
@@ -285,72 +286,72 @@ echo $ADDRESS
 ```
 ```bash
 # Jail, tombstoned, start_height, index_offset
-okp4d q slashing signing-info $(okp4d tendermint show-validator)
+teritorid q slashing signing-info $(teritorid tendermint show-validator)
 ```
 ```bash
 # Get peer (e.g. 72cc19c8435d662677b2ea627e649f39b5bc8abb@5.161.70.110:26656
-echo "$(okp4d tendermint show-node-id)@$(curl ifconfig.me):$(curl -s $NODE/status | jq -r '.result.node_info.listen_addr' | cut -d':' -f3)"
+echo "$(teritorid tendermint show-node-id)@$(curl ifconfig.me):$(curl -s $NODE/status | jq -r '.result.node_info.listen_addr' | cut -d':' -f3)"
 ```
 ### Wallet
 ```bash
 # Get balance
-okp4d q bank balances $ADDRESS
+teritorid q bank balances $ADDRESS
 ```
 
 ### Voting
 ```bash
 # Vote
-okp4d tx gov vote <PROPOSAL_ID> <yes|no> --from $WALLET --fees 5000uknow -y
+teritorid tx gov vote <PROPOSAL_ID> <yes|no> --from $WALLET --fees 5000uknow -y
 ```
 ```bash
 # Check all voted proposals
-okp4d q gov proposals --voter $ADDRESS
+teritorid q gov proposals --voter $ADDRESS
 ```
 
 ### Actions
 ```bash
 # Edit validator
-okp4d tx staking edit-validator --website="<YOUR_WEBSITE>" --details="<YOUR_DESCRIPTION>" --moniker="<YOUR_NEW_MONIKER>" --from=$WALLET --fees 5000uknow
+teritorid tx staking edit-validator --website="<YOUR_WEBSITE>" --details="<YOUR_DESCRIPTION>" --moniker="<YOUR_NEW_MONIKER>" --from=$WALLET --fees 5000uknow
 ```
 ```bash
 # Unjail
-okp4d tx slashing unjail --from $WALLET --fees 5000uknow
+teritorid tx slashing unjail --from $WALLET --fees 5000uknow
 ```
 ```bash
 # Bond more tokens (if you want increase your validator stake you should bond more to your valoper address):
-okp4d tx staking delegate $VALOPER <TOKENS_COUNT>uknow--from $WALLET --fees 5000uknow -y
+teritorid tx staking delegate $VALOPER <TOKENS_COUNT>uknow--from $WALLET --fees 5000uknow -y
 ```
 ```bash
 # Undelegate
-okp4d tx staking unbond $VALOPER <TOKENS_COUNT>uknow --from $WALLET --fees 5000uknow -y
+teritorid tx staking unbond $VALOPER <TOKENS_COUNT>uknow --from $WALLET --fees 5000uknow -y
 ```
 ```bash
 # Send tokens. 1 token = 1000000 (Cosmos)
-okp4d tx bank send $WALLET <WALLET_TO> <TOKENS_COUNT>uknow --fees 5000uknow
-# e.g. okp4d tx bank send $WALLET cosmos10h3t6rtrjwxqlw0jgwc540rthuclhvrzhndkeg 1000000uknow --gas auto
+teritorid tx bank send $WALLET <WALLET_TO> <TOKENS_COUNT>uknow --fees 5000uknow
+# e.g. teritorid tx bank send $WALLET cosmos10h3t6rtrjwxqlw0jgwc540rthuclhvrzhndkeg 1000000uknow --gas auto
 ```
 ```bash
 # Change peers and seeds
 peers="<PEERS>"
 seeds="<SEEDS>"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/; s/^seeds *=.*/seeds = \"$seeds\"/" $HOME/.okp4d/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/; s/^seeds *=.*/seeds = \"$seeds\"/" $HOME/.teritorid/config/config.toml
 ```
 ```bash
 # Reset private validator file to genesis state and delete addrbook.json
-okp4d tendermint unsafe-reset-all --home $HOME/.okp4d
+teritorid tendermint unsafe-reset-all --home $HOME/.teritorid
 ```
 
 ### All validators info
 ```bash
 # List of all active validators 
-okp4d q staking validators -o json --limit=1000 \
+teritorid q staking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
 ```
 ```bash
 # List of all inactive validators 
-okp4d q staking validators -o json --limit=1000 \
+teritorid q staking validators -o json --limit=1000 \
 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' \
 | jq -r '.tokens + " - " + .description.moniker' \
 | sort -gr | nl
@@ -375,11 +376,11 @@ ncdu
 ```
 ## Delete node
 ```bash
-sudo systemctl stop okp4d && \
-sudo systemctl disable okp4d; \
-sudo rm /etc/systemd/system/okp4d.service; \
+sudo systemctl stop teritorid && \
+sudo systemctl disable teritorid; \
+sudo rm /etc/systemd/system/teritorid.service; \
 sudo systemctl daemon-reload && \
 cd $HOME && \
-rm -rf .okp4d okp4d; \
-sudo rm $(which okp4d)
+rm -rf .teritorid teritorid; \
+sudo rm $(which teritorid)
 ```
