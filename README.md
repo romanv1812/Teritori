@@ -1,3 +1,7 @@
+[<img src='https://user-images.githubusercontent.com/83868103/215500269-739ecd2f-200f-426d-97b5-96e814c7e348.png' alt='discord'  width='100%'>]()
+[<img src='https://user-images.githubusercontent.com/83868103/215500261-1e9fe9e6-efa8-4a8f-95f9-c18ebb6b643c.png' alt='discord'  width='33.33%'>]()[<img src='https://user-images.githubusercontent.com/83868103/215500256-bc5dc735-9593-4d5f-8774-ded101da8353.png' alt='discord'  width='33.33%'>]()[<img src='https://user-images.githubusercontent.com/83868103/215500265-e165eae1-b3fe-4c1b-b085-ae9c22812a48.png' alt='discord'  width='33.33%'>]()
 
-[<img src='https://user-images.githubusercontent.com/83868103/215495755-1500c374-f2e4-4c55-934b-d726973dc3aa.png' alt='discord'  width='100%'>](https://discordapp.com/users/303453296755212288)
-[<img src='https://user-images.githubusercontent.com/83868103/215495750-0b271813-918b-4cdf-9582-13bb217e21ed.png' alt='telegram'  width='33.33%'>](https://t.me/romanv1812)[<img src='https://user-images.githubusercontent.com/83868103/215495746-4f449094-e849-41cf-8c54-8a54930d9bd9.png' alt='telegram'  width='33.33%'>](https://t.me/romanv1812)[<img src='https://user-images.githubusercontent.com/83868103/215495753-84653272-6050-4826-bb7d-d796697ef5d0.png' alt='telegram'  width='33.33%'>](https://t.me/romanv1812)
+[<img src='https://user-images.githubusercontent.com/83868103/215500269-739ecd2f-200f-426d-97b5-96e814c7e348.png' alt='discord'  width='100%'>]()
+[<img src='https://user-images.githubusercontent.com/83868103/215500261-1e9fe9e6-efa8-4a8f-95f9-c18ebb6b643c.png' alt='discord'  width='33%'>]()
+[<img src='https://user-images.githubusercontent.com/83868103/215500256-bc5dc735-9593-4d5f-8774-ded101da8353.png' alt='discord'  width='33%'>]()
+[<img src='https://user-images.githubusercontent.com/83868103/215500265-e165eae1-b3fe-4c1b-b085-ae9c22812a48.png' alt='discord'  width='33.1%'>]()
