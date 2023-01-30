@@ -1,3 +1,4 @@
+[<img src='https://user-images.githubusercontent.com/83868103/215572894-9ec38124-2d2b-4e48-9a29-5ca68fbc2614.png' alt='discord'  width='33.3%'>](https://github.com/romanv1812/Teritori/blob/main/data/mainnet_guide.md)[<img src='https://user-images.githubusercontent.com/83868103/215572987-55c89326-4201-41df-a21a-dde97ebd1280.png' alt='discord'  width='33.3%'>](https://restake.app/teritori/torivaloper1qy38xmcrnht0kt5c5fryvl8llrpdwer6atxj5u/stake)[<img src='https://user-images.githubusercontent.com/83868103/215573016-93348857-c5f8-4480-a22e-3d6c9ab94444.png' alt='discord'  width='33.39%'>](https://github.com/romanv1812/Teritori/blob/main/data/services.md)
 ### Links:   
 [Explorer](https://okp4.explorers.guru) | [Explorer](https://test.anode.team/opk4) 
 
