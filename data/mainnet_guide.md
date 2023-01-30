@@ -72,9 +72,9 @@ make install
 ```
 ```bash 
 # Initialisation
-teritorid init $MONIKER --chain-id okp4-nemeton-1 && \
-teritorid config chain-id okp4-nemeton-1 && \
-teritorid config keyring-backend test 
+teritorid init $MONIKER --chain-id teritori-1 && \
+teritorid config chain-id teritori-1 && \
+teritorid config keyring-backend os
 ```
 ```bash
 # Add wallet
@@ -92,11 +92,11 @@ source $HOME/.bash_profile
 ```
 ```bash 
 # Peers and seeds
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"9c462b1c0ba63115bd70c3bd4f2935fcb93721d0@65.21.170.3:42656,ee4c5d9a8ac7401f996ef9c4d79b8abda9505400@144.76.97.251:12656,2e85c1d08cfca6982c74ef2b67251aa459dd9b2f@65.109.85.170:43656,264256d32511c512a0a9d4098310a057c9999fd1@okp4.sergo.dev:12233,4ea26ce893d8f4f89a7b49b9bd77e0fbd914e029@65.109.88.162:36656,8d8fdad759361a57121903632adbd66ad072b1ab@okp4-testnet.nodejumper.io:29656,e3c602b146121c88d350bd7e0f6ce8977e1aacff@161.97.122.216:26656,3c805c2dead7b7a3a1d3ba2399d4d62153322413@65.108.2.41:36656,9d1482bc31fb4578a5c7f7f65c4e0aaf2dfc2336@213.239.215.77:34656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@[2a02:c206:2093:4875::1]:36656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@38.242.150.63:36656,99f6675049e22a0216af0e2447e7a4c5021874cd@142.132.132.200:28656,9392c27a9a561c31e7a920dc6f577d663c473ef8@154.12.225.88:26656\"/; s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.teritorid/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"26175f13ada3d61c93bca342819fd5dc797bced0@teritori.nodejumper.io:28656,722b63e6c65628b929f22013dcbcde980210cb44@176.9.127.54:26656,8f28518afd31a42ea81bb3232a50ab0cec4dcdf7@51.158.236.131:26656,647bbbc30d26fbbb2f7d19aafe30ed77a92c4748@[2a01:4f9:6b:2e5b::4]:26656,5a98d637a16b16bf425a4a785c9d11a7d1e5b8a0@65.21.131.215:26736,f813a00f52de54a49aea3211b89a65ae6133eac2@88.99.167.148:26686,358f13bd95d91517053a58f4d30205842672837f@104.37.187.214:60656,ce3baba928ae06cd3ff0af20aec888a82ddffef7@54.37.129.171:26656,3bd3a20d7c8a26a20927289a7a6bffecf71de53e@51.81.155.97:10856,48980875839186e08e12ebf0d9a2803b45206833@65.109.92.241:38026,526d8c7c44f59be9a39d7463c576b68c0db23174@65.108.234.23:15956\"/; s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.teritorid/config/config.toml
 ```
 ```bash 
 # Download ZIP genesis 
-wget -O $HOME/.teritorid/config/genesis.json https://raw.githubusercontent.com/okp4/networks/main/chains/nemeton-1/genesis.json
+wget -O $HOME/.teritorid/config/genesis.json https://media.githubusercontent.com/media/TERITORI/teritori-chain/v1.1.2/mainnet/teritori-1/genesis.json
 ```
 ## Change PORT
 ```bash
@@ -179,15 +179,15 @@ curl -s $NODE/status | jq .result.sync_info.catching_up
 ## Create a validator
 ```bash 
 teritorid tx staking create-validator \
-  --amount=1000000uknow \
+  --amount=1000000utori \
   --pubkey=$(teritorid tendermint show-validator) \
   --moniker=$MONIKER \
-  --chain-id=okp4-nemeton-1 \
+  --chain-id=teritori-1 \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --min-self-delegation=1000000 \
-  --fees=0uknow \
+  --fees=0utori \
   --from=$WALLET \
   --identity=$IDENTITY \
   --website=$WEBSITE \
@@ -301,7 +301,7 @@ teritorid q bank balances $ADDRESS
 ### Voting
 ```bash
 # Vote
-teritorid tx gov vote <PROPOSAL_ID> <yes|no> --from $WALLET --fees 5000uknow -y
+teritorid tx gov vote <PROPOSAL_ID> <yes|no> --from $WALLET --fees 5000utori -y
 ```
 ```bash
 # Check all voted proposals
@@ -311,24 +311,24 @@ teritorid q gov proposals --voter $ADDRESS
 ### Actions
 ```bash
 # Edit validator
-teritorid tx staking edit-validator --website="<YOUR_WEBSITE>" --details="<YOUR_DESCRIPTION>" --moniker="<YOUR_NEW_MONIKER>" --from=$WALLET --fees 5000uknow
+teritorid tx staking edit-validator --website="<YOUR_WEBSITE>" --details="<YOUR_DESCRIPTION>" --moniker="<YOUR_NEW_MONIKER>" --from=$WALLET --fees 5000utori
 ```
 ```bash
 # Unjail
-teritorid tx slashing unjail --from $WALLET --fees 5000uknow
+teritorid tx slashing unjail --from $WALLET --fees 5000utori
 ```
 ```bash
 # Bond more tokens (if you want increase your validator stake you should bond more to your valoper address):
-teritorid tx staking delegate $VALOPER <TOKENS_COUNT>uknow--from $WALLET --fees 5000uknow -y
+teritorid tx staking delegate $VALOPER <TOKENS_COUNT>utori--from $WALLET --fees 5000utori -y
 ```
 ```bash
 # Undelegate
-teritorid tx staking unbond $VALOPER <TOKENS_COUNT>uknow --from $WALLET --fees 5000uknow -y
+teritorid tx staking unbond $VALOPER <TOKENS_COUNT>utori --from $WALLET --fees 5000utori -y
 ```
 ```bash
 # Send tokens. 1 token = 1000000 (Cosmos)
-teritorid tx bank send $WALLET <WALLET_TO> <TOKENS_COUNT>uknow --fees 5000uknow
-# e.g. teritorid tx bank send $WALLET cosmos10h3t6rtrjwxqlw0jgwc540rthuclhvrzhndkeg 1000000uknow --gas auto
+teritorid tx bank send $WALLET <WALLET_TO> <TOKENS_COUNT>utori --fees 5000utori
+# e.g. teritorid tx bank send $WALLET cosmos10h3t6rtrjwxqlw0jgwc540rthuclhvrzhndkeg 1000000utori --gas auto
 ```
 ```bash
 # Change peers and seeds
