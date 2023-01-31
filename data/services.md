@@ -1,15 +1,17 @@
+
+```YAML
+RPC:      http://65.109.85.170:52657 # Indexer "ON" 
+gRPC:     http://65.109.85.170:35090  
+gRPC Web: http://65.109.85.170:35091  
+API:      http://65.109.85.170:27317  
+peer:     3669cd79a690f3e00e6cb87429b9d7b674955d8c@65.109.85.170:52656  
+seed:     3402bc832e2c1635a245b1301f0737b5f46f0ebd@65.109.85.170:10256  
+```
+
 ```bash
 RPC-LIST: http://65.109.85.170:8000/rpc.txt #UPD every 3hr; 
 SNAPSHOT: http://65.109.85.170:8000/teritori-1.tar #Pruning = default; Indexer "ON"; "FULL HISTORY; UPD every day"
 Addrbook: http://65.109.85.170:8000/addrbook.json
-```
-```bash
-RPC:      http://65.109.85.170:52657#Indexer "ON" Snapshot-interval = 100
-gRPC:     http://65.109.85.170:35090
-gRPC Web: http://65.109.85.170:35091
-API:      http://65.109.85.170:27317
-Peer:     3669cd79a690f3e00e6cb87429b9d7b674955d8c@65.109.85.170:52656
-Seed:     3402bc832e2c1635a245b1301f0737b5f46f0ebd@65.109.85.170:10256
 ```
 ```bash
 #Recovery from state-sync
