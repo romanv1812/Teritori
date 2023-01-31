@@ -1,3 +1,4 @@
+[<img src='https://user-images.githubusercontent.com/83868103/215836529-812ac1b8-029f-4f5d-bb72-8539c308b0f4.png' alt='discord'  width='33%'>](https://github.com/romanv1812/Teritori/blob/main/data/mainnet_guide.md)[<img src='https://user-images.githubusercontent.com/83868103/215836572-1ace2f52-bfa5-452a-a9bd-1382169bc8f2.png' alt='discord'  width='33.39%'>](https://restake.app/teritori/torivaloper1qy38xmcrnht0kt5c5fryvl8llrpdwer6atxj5u/stake)[<img src='https://user-images.githubusercontent.com/83868103/215836599-cb1990d2-2e43-4fc2-898a-c373bcb64677.png' alt='discord'  width='33%'>](https://restake.app/teritori/torivaloper1qy38xmcrnht0kt5c5fryvl8llrpdwer6atxj5u/stake)
 ```python
 Services status  🟢
 ```
