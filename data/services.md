@@ -58,8 +58,10 @@ Live Peers UPD at 17:00 ⏳ 31.01.2022 🗓️ Count Of Peers = 50
 ---
 
 # HOW TO USE?
+```python
+Recovery From State-Sync
+```
 ```bash
-#Recovery from state-sync
 sudo systemctl stop teritorid && \
 teritorid tendermint unsafe-reset-all --home $HOME/.teritorid
 RPC=http://65.109.85.170:52657
