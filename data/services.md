@@ -79,6 +79,9 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.teritorid/config/config.t
 wget -O $HOME/.teritorid/config/addrbook.json http://65.109.85.170:8000/addrbook.json
 sudo systemctl restart teritorid && journalctl -u teritorid -f -o cat
 ```
+```python
+Recovery From Snapshot
+```
 ```bash
 #Recovery from snapshot
 sudo systemctl stop teritorid
