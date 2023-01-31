@@ -33,7 +33,7 @@ INDEXER: 🟢 HEIGHT: 3127244 MONIKER: AlxVoy
 RPC=http://213.239.217.52:41657
 ```
 ```python
-Live Peers UPD at 17:00 ⏳ 31.01.2022 🗓️
+Live Peers UPD at 17:00 ⏳ 31.01.2022 🗓️ Count Of Peers = 50 
 ```
 ```YAML
 "31413c99357d0cfc48a46767ade171db2ea0205e@135.181.138.160:46656,22101a61b235e607d5d0ad51b698d7511ebf87e2@144.76.97.251:26796,c9be05c0ec5fa032cd10bd59bb6173c025b97f17@135.181.138.161:26676,5ae1012f9b0f4672d8152de903d115dd2f1a3ee3@65.21.170.3:27656,15dd94f68c450da2c3b7c60b6364e3dce6f0cbf2@185.193.66.68:26641,07d196ccefcadc548c6cd06cfea425f1544b1495@213.239.217.52:41656"
@@ -41,11 +41,17 @@ Live Peers UPD at 17:00 ⏳ 31.01.2022 🗓️
 ```python
 Shapshot UPD at 17:00 ⏳ 31.01.2022 🗓️ on HIGHT: 2000000
 ```
-```bash
-RPC-LIST: http://65.109.85.170:8000/rpc.txt #UPD every 3hr; 
-SNAPSHOT: http://65.109.85.170:8000/teritori-1.tar #Pruning = default; Indexer "ON"; "FULL HISTORY; UPD every day"
-Addrbook: http://65.109.85.170:8000/addrbook.json
+```YAML
+http://65.109.85.170:8000/teritori-1.tar # Pruning: custom 100\10\100 Indexer "on"
 ```
+```python
+Addrbook UPD at 17:00 ⏳ 31.01.2022 🗓️ 
+```
+```YAML
+http://65.109.85.170:8000/addrbook.json 
+```
+
+# HOW TO USE?
 ```bash
 #Recovery from state-sync
 sudo systemctl stop teritorid && \
