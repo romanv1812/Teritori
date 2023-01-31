@@ -1,29 +1,7 @@
 
 [<img src='https://user-images.githubusercontent.com/83868103/215839898-922bfe5d-558c-4f90-99c9-48b559ae7ed3.png' alt='discord'  width='33%'>](https://github.com/romanv1812/Teritori/blob/main/data/services.md)[<img src='https://user-images.githubusercontent.com/83868103/215839977-f59ab67d-e2dc-448b-b509-b762706a5ac9.png' alt='discord'  width='33.65%'>](https://restake.app/teritori/torivaloper1qy38xmcrnht0kt5c5fryvl8llrpdwer6atxj5u/stake)[<img src='https://user-images.githubusercontent.com/83868103/215840036-4804a30d-f30e-4674-849c-a053b5862718.png' alt='discord'  width='33.25%'>](https://github.com/romanv1812/Teritori/blob/main/data/services.md)
-```### Links:   
-[Explorer](https://www.mintscan.io/teritori) | |
 
-[Faucet](https://faucet.okp4.network/)
 
-[Discord](https://discord.gg/teritori) | [Twitter](https://twitter.com/TeritoriNetwork) | [Telegram](https://t.me/okp4network)
-
-[Github](https://github.com/okp4)  | [Website](https://okp4.network/)  | [Medium](https://blog.okp4.network/) | [Linkedin](https://www.linkedin.com/company/okp4-open-knowledge-platform-for) | [Whitepaper](https://docs.okp4.network/whitepaper/abstract%20)
-```
-
-```
-## Guide navigation:
-* [Prepare](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#prepare)
-* [All variables](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#all-variables)
-* [Build and configuration](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#build-and-configuration)
-* [Change PORT](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#change-port)
-* [Memory optimization](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#memory-optimization)
-* [Start node](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#start-node)
-* [Create a validator](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#create-a-validator)
-* [Snapshot](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#snapshot)
-* [Update node](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#update-node)
-* [Useful commands](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#useful-commands)
-* [Delete node](https://github.com/romanv1812/OKP4/blob/main/Sidh/Setup%20your%20node.md#delete-node)
-```
 ## Prepare
 ### Update if needed and install packages
 ```bash
