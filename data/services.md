@@ -36,17 +36,24 @@ RPC=http://213.239.217.52:41657
 ```
 #
 ```python
-Shapshot UPD at 17:00 ⏳ 31.01.2022 🗓️ on HIGHT: 2000000
+Shapshot UPD at 17:00 ⏳ 31.01.2022 🗓️ on HIGHT: 2000000 Size: 5GB
 ```
 ```YAML
-http://65.109.85.170:8000/teritori-1.tar # Pruning: custom 100\10\100 Indexer "on"
+http://65.109.85.170:8000/teritori-db.tar.lz4 # Pruning: custom 100\10\100 Indexer "on"
+```
+#
+```python
+Wasm UPD at 17:00 ⏳ 31.01.2022 🗓️ on HIGHT: 2000000
+```
+```YAML
+http://65.109.85.170:8000/teritori-wasm.tar.lz4 
 ```
 #
 ```python
 Addrbook UPD at 17:00 ⏳ 31.01.2022 🗓️ 
 ```
 ```YAML
-http://65.109.85.170:8000/addrbook.json 
+http://65.109.85.170:8000/addrbook.json
 ```
 #
 ```python
