@@ -174,9 +174,6 @@ teritorid tx staking create-validator \
   --security-contact=$SECURITY_CONTACT \
   -y
   ```
-## Snapshot
-If you did not find an open RPC, you can use the [parser](https://github.com/romanv1812/OKP4/blob/main/rpc_parser.sh) to search in the addrbook.
-<img width="1078" alt="image" src="https://user-images.githubusercontent.com/83868103/210120043-e662ea3d-5c2e-4d06-9f62-162c6005ec70.png">
 
 ```bash
 sudo systemctl stop teritorid && \
